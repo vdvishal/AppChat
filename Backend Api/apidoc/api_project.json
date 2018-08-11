@@ -1,0 +1,16 @@
+{
+  "name": "Group Chat Application",
+  "version": "1.0.0",
+  "description": "Documentation for the Chat app",
+  "title": "Chat APIs",
+  "url": "http://localhost:3000",
+  "sampleUrl": false,
+  "defaultVersion": "0.0.0",
+  "apidoc": "0.3.0",
+  "generator": {
+    "name": "apidoc",
+    "time": "2018-08-08T18:19:48.591Z",
+    "url": "http://apidocjs.com",
+    "version": "0.17.6"
+  }
+}

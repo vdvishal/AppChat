@@ -1,0 +1,67 @@
+<div class="container-fluid custom" [hidden]="submitted">
+  <div class="card text-center w-50" style="margin:auto;background-color: rgba(245, 245, 245, 0.5);margin-top: 50px">
+    <div class="card-body">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <span class="nav-link active" id="home-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true"  style="cursor: pointer;">Login</span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link" id="profile-tab" data-toggle="tab" href="#signup" role="tab" aria-controls="dignup" aria-selected="false" style="cursor: pointer;">Sign Up</span>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="home-tab">
+          <div class="container">
+            <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+              <div class="form-group" >
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="email" name="mail">
+                <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" [(ngModel)]="password" name="pass">
+              </div>
+              
+              <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+              <div >
+                <a routerLink='/forgotpassword'>Forgot Password</a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="container">
+            <form #myForm2="ngForm" (ngSubmit)="onSubmit()" >
+              <div class="form-group">
+                <label for="formGroupExampleInput">Email Address</label>
+                <input type="email" class="form-control" id="formGroupExampleInput" [(ngModel)]='mail' name="mail" #emailControl="ngModel" required>
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Password</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" [(ngModel)]='newpassword' name="2" required>
+              </div>
+      
+              <div class="form-group">
+                <label for="formGroupExampleInput3">First Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput3" [(ngModel)]='firstName' name="3" required>
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput4">Last Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput4" [(ngModel)]='lastName' name="4" required>
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput5">Mobile Number</label>
+                <input type="text" class="form-control" id="formGroupExampleInput5" [(ngModel)]='number' name="5" required>
+              </div>
+              <button type="submit" class="btn btn-primary" (click)="signup()">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

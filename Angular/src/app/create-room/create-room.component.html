@@ -1,0 +1,60 @@
+<div class="collapse this">
+  <div class="sidenav">
+      <h1 style="cursor: pointer;">
+          <div class="menu-icon1" data-toggle="collapse" data-target=".this" role="button">
+              <span class="line1"></span>
+              <span class="line1"></span>
+              <span class="line1"></span>
+          </div>
+        </h1>
+      <a routerLink='/chatroom' style="font-size: 20px">Chatrooms</a>
+      <a routerLink='/createroom'  style="font-size: 20px">Create Chatroom</a>
+      <a (click)="logout()" style="font-size: 20px">Logout</a>
+  </div>
+</div>
+<div class="custom">
+    <h1 style="cursor: pointer;">
+        <div class="menu-icon" data-toggle="collapse" data-target=".this" role="button">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+      </h1>
+  <div class="container-fluid" [hidden]="submitted">
+    <div class="card text-center w-50" style="margin:auto;background-color: rgba(245, 245, 245, 0.5);margin-top: 50px">
+      <div class="card-body">
+        <h5 class="card-title">Create room</h5>
+        <hr>
+            <div class="container">
+              <form #my="ngForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Title</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="title" name="name">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">About</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput2" [(ngModel)]="about" name="about">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput3">Set Active</label>
+                    <div class="input-group mb-3">
+                        <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="isActive" name="select">
+                          <option [value]=true >Active</option>
+                          <option [value]=false >Inactive</option>
+                        </select>
+                      </div>
+                  </div>
+                <button type="submit" class="btn btn-primary" (click)="createRoom()">Create</button>
+              </form>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+    
+    
+    
+      
+   
